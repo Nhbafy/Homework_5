@@ -80,12 +80,9 @@ namespace Homework_5
         {
             RightList.Items.Clear();
             ListBox listbox = (ListBox)sender;
-            if (listbox.SelectedItem != null)
-            {
-
+            if (listbox.SelectedItem == null) return;
                 if (ComboBoxTypes.SelectedIndex == 0)
                 {
-
                     RightList.Visibility = Visibility.Visible;
                     RightList.Items.Add(Employee.GetEmployee(listbox.SelectedItem.ToString()).Department.DepartmentName);
                 }
@@ -102,7 +99,6 @@ namespace Homework_5
                     }
 
                 }
-            }
         }
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
