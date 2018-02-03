@@ -1,0 +1,26 @@
+﻿<Window x:Class="Homework_5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Homework_5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Grid>
+        <ComboBox x:Name="ComboBoxTypes" Margin="18,10,379,0" VerticalAlignment="Top" IsReadOnly="True" SelectionChanged="ComboBoxTypes_SelectionChanged">
+            <ComboBoxItem>Сотрудники</ComboBoxItem>
+            <ComboBoxItem>Департамент</ComboBoxItem>
+        </ComboBox>
+        <ListBox x:Name="LeftList" Height="168" Margin="10,103,314,0" VerticalAlignment="Top" SelectionChanged="LeftList_SelectionChanged" Visibility="Hidden">
+            <ListBox.Effect>
+                <DropShadowEffect/>
+            </ListBox.Effect>
+        </ListBox>
+        <ListBox x:Name="RightList" Height="168" Margin="315,103,10,0" VerticalAlignment="Top" Visibility="Hidden">
+            <ListBox.Effect>
+                <DropShadowEffect/>
+            </ListBox.Effect>
+        </ListBox>
+        <Button x:Name="EditButton" Content="Редактировать" HorizontalAlignment="Left" Margin="208,148,0,0" VerticalAlignment="Top" Width="102" Click="EditButton_Click"/>
+    </Grid>
+</Window>
