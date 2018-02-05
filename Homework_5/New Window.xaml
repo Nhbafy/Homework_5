@@ -5,16 +5,18 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Homework_5"
         mc:Ignorable="d"
-        Title="New_Window" Height="300" Width="426.786">
-    <Grid Margin="0,0,0,50">
-        <TextBox x:Name="FirstNameTB" HorizontalAlignment="Left" Margin="122,24,0,0" TextWrapping="Wrap" Text="TextBox" Width="252" TextChanged="FirstNameTB_TextChanged" Height="23" VerticalAlignment="Top"/>
-        <TextBox x:Name="SecondNameTB" Margin="122,74,45,114" TextWrapping="Wrap" Text="TextBox" TextChanged="FirstNameTB_TextChanged"/>
-        <TextBox x:Name="DepartmentTB" HorizontalAlignment="Left" Margin="122,127,0,26" TextWrapping="Wrap" Text="TextBox" Width="252" TextChanged="FirstNameTB_TextChanged" RenderTransformOrigin="1.029,1.734"/>
-        <Label x:Name="FirstNameLabel" Content="Имя" HorizontalAlignment="Left" Margin="35,20,0,162"/>
-        <Label x:Name="SecondNameLabel" Content="Фамилия" Margin="35,74,313,114" />
-        <Label x:Name="DepartmentLabel" Content="Департамент" HorizontalAlignment="Left" Margin="35,140,0,0" VerticalAlignment="Top" Height="30"/>
-        <Button Name="SaveButton" Content="Сохранить" HorizontalAlignment="Left" Height="29" Margin="37,224,0,-34" VerticalAlignment="Top" Width="80" Click="SaveButton_Click"/>
-        <Button Name="CancelButton" Content="Отмена" HorizontalAlignment="Left" Height="29" Margin="311,224,0,-34" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.08,0.086" Click="CancelButton_Click"/>
+        Title="New_Window" Height="400" Width="426.786">
+    <Grid>
+        <TextBox x:Name="FirstNameTB" HorizontalAlignment="Left" Margin="122,24,0,0" Text="TextBox" Width="252" Height="23" VerticalAlignment="Top"/>
+        <TextBox x:Name="SecondNameTB" Margin="122,74,45,0" Text="TextBox"  Height="23" VerticalAlignment="Top"/>
+        <TextBox x:Name="DepartmentTB" HorizontalAlignment="Left" Margin="122,215,0,0" Text="TextBox" Width="252" RenderTransformOrigin="1.029,1.734" Height="76" VerticalAlignment="Top"/>
+        <Label x:Name="FirstNameLabel" Content="Имя" HorizontalAlignment="Left" Margin="35,20,0,273"/>
+        <Label x:Name="SecondNameLabel" Content="Фамилия" Margin="35,74,313,263" />
+        <Label x:Name="DepartmentLabel" Content="Департамент" HorizontalAlignment="Left" Margin="35,228,0,0" VerticalAlignment="Top" Height="30"/>
+        <Button Name="SaveButton" Content="Сохранить" HorizontalAlignment="Left" Margin="35,327,0,14" Width="80" Click="SaveButton_Click"/>
+        <Button Name="CancelButton" Content="Отмена" HorizontalAlignment="Left" Height="29" Margin="294,327,0,-36" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.08,0.086" Click="CancelButton_Click"/>
+        <TextBox Name="AgeTB" HorizontalAlignment="Left" Height="23" Margin="122,141,0,0" Text="TextBox" VerticalAlignment="Top" Width="72"/>
+        <Label Name="AgeLabel" Content="Возраст" HorizontalAlignment="Left" Margin="35,139,0,0" VerticalAlignment="Top" Width="71"/>
 
     </Grid>
 </Window>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,21 +17,22 @@ namespace Homework_5
 
         public Employee(string firstName, string secondName, int age, Department department)
         {
-            _firstName = firstName;
-            _secondName = secondName;
-            this._age = age;
+            FirstName = firstName;
+            SecondName = secondName;
+            this.Age = age;
             _fullname = secondName + " " + firstName;
-            _department = department;
+            Department = department;
         }
 
-        public string FirstName { get => _firstName; }
-        public string SecondName { get => _secondName; }
-        public int Age { get => _age; }
-        public static List<Employee> Emp_list { get => emp_list; }
+  
+        public static ObservableCollection<Employee> Emp_list { get => emp_list; }
         public string Fullname { get => _fullname; }
-        public Department Department { get => _department; }
+        public string FirstName { get => _firstName; set => _firstName = value; }
+        public string SecondName { get => _secondName; set => _secondName = value; }
+        public int Age { get => _age; set => _age = value; }
+        public Department Department { get => _department; set => _department = value; }
 
-        private static List<Employee> emp_list = new List<Employee>
+        private static ObservableCollection<Employee> emp_list = new ObservableCollection<Employee>
             {
                 new Employee("Иван", "Иванов", 34, Department.Dep_list[0]),
                 new Employee("Петр", "Третьков", 23, Department.Dep_list[1]),

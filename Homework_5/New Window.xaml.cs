@@ -19,18 +19,18 @@ namespace Homework_5
     /// </summary>
     public partial class New_Window : Window
     {
+        private Employee _employee;
         public New_Window (Employee employee)
         {
             InitializeComponent();
             FirstNameTB.Text = employee.FirstName;
             SecondNameTB.Text = employee.SecondName;
             DepartmentTB.Text = employee.Department.DepartmentName;
+            AgeTB.Text = employee.Age.ToString();
+
+            _employee = employee;
         }
 
-
-        private void FirstNameTB_TextChanged(object sender, TextChangedEventArgs e)
-        {
-        }
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
@@ -39,7 +39,12 @@ namespace Homework_5
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-
+            _employee.FirstName = FirstNameTB.Text;
+            _employee.SecondName = SecondNameTB.Text;
+            _employee.Department.DepartmentName = DepartmentTB.Text;
+            _employee.Age = Int32.Parse( AgeTB.Text);
+            
+            Close();
         }
     }
 }

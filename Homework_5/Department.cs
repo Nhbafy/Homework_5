@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,14 +13,14 @@ namespace Homework_5
 
         public Department(string departmentName)
         {
-            _departmentName = departmentName;
+            DepartmentName = departmentName;
         }
 
-        public string DepartmentName { get => _departmentName;}
 
-        public static List<Department> Dep_list { get => dep_list;}
+        public static ObservableCollection<Department> Dep_list { get => dep_list;}
+        public string DepartmentName { get => _departmentName; set => _departmentName = value; }
 
-        private static List<Department> dep_list = new List<Department>
+        private static ObservableCollection<Department> dep_list = new ObservableCollection<Department>
             {
                 new Department("Департамент качества"),
                 new Department("Департамент разработки"),

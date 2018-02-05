@@ -68,11 +68,12 @@ namespace Homework_5
         public void SelectDepartment()
         {
             LeftList.Visibility = Visibility.Visible;
-
-            for (int i = 0; i < Department.Dep_list.Count; i++)
-            {
-                LeftList.Items.Add(Department.Dep_list[i].DepartmentName);
-            }
+            LeftList.ItemsSource = Employee.Emp_list;
+            
+      //      for (int i = 0; i < Department.Dep_list.Count; i++)
+          //  {
+         //       LeftList.Items.Add(Department.Dep_list[i].DepartmentName);
+        //    }
         }
 
 
@@ -108,6 +109,7 @@ namespace Homework_5
                 Owner = this
             };
             newWindow.Show();
+            LeftList.Items.Refresh();
         }
     }
 
