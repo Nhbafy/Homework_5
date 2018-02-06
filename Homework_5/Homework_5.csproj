@@ -57,7 +57,6 @@
     <Compile Include="New Window.xaml.cs">
       <DependentUpon>New Window.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Types.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

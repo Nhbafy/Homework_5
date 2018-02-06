@@ -15,6 +15,10 @@ namespace Homework_5
         private String _fullname;
         private Department _department;
 
+        public Employee()
+        {
+        }
+
         public Employee(string firstName, string secondName, int age, Department department)
         {
             FirstName = firstName;
@@ -24,7 +28,8 @@ namespace Homework_5
             Department = department;
         }
 
-  
+
+
         public static ObservableCollection<Employee> Emp_list { get => emp_list; }
         public string Fullname { get => _fullname; }
         public string FirstName { get => _firstName; set => _firstName = value; }

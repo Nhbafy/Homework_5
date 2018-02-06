@@ -15,7 +15,7 @@
         <Label x:Name="DepartmentLabel" Content="Департамент" HorizontalAlignment="Left" Margin="35,228,0,0" VerticalAlignment="Top" Height="30"/>
         <Button Name="SaveButton" Content="Сохранить" HorizontalAlignment="Left" Margin="35,327,0,14" Width="80" Click="SaveButton_Click"/>
         <Button Name="CancelButton" Content="Отмена" HorizontalAlignment="Left" Height="29" Margin="294,327,0,-36" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.08,0.086" Click="CancelButton_Click"/>
-        <TextBox Name="AgeTB" HorizontalAlignment="Left" Height="23" Margin="122,141,0,0" Text="TextBox" VerticalAlignment="Top" Width="72"/>
+        <TextBox x:Name="AgeTB" HorizontalAlignment="Left" Height="23" Margin="122,141,0,0" Text="TextBox" VerticalAlignment="Top" Width="72"/>
         <Label Name="AgeLabel" Content="Возраст" HorizontalAlignment="Left" Margin="35,139,0,0" VerticalAlignment="Top" Width="71"/>
 
     </Grid>
