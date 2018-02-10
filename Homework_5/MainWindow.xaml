@@ -8,16 +8,14 @@
         Title="MainWindow" Height="432.069" Width="697.348">
     <Grid>
         <Button x:Name="EditButton" Content="Редактировать" HorizontalAlignment="Left" Margin="48,346,0,0" VerticalAlignment="Top" Width="102" Click="EditButton_Click" Visibility="Visible"/>
-
-        <ListView x:Name="ViewEmployee"   HorizontalAlignment="Left" Height="299" Margin="10,10,0,0" VerticalAlignment="Top" Width="669"   SelectionChanged = "ListView_SelectionChanged">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn  Width="350" DisplayMemberBinding="{Binding Path=FullName}">Сотрудник</GridViewColumn>
-                    <GridViewColumn  Width="350" DisplayMemberBinding="{Binding Path=Department}">Департамент</GridViewColumn>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <StackPanel>
+            <DataGrid Name="EmpView" AutoGenerateColumns="False" ItemsSource="{Binding}" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn x:Name="EmpColumn" Binding="{Binding FullName}" Header="Сотрудник" IsReadOnly="True" Width="Auto"/>
+                    <DataGridTextColumn x:Name="DepColumn" Binding="{Binding Department}" Header="Департамент" IsReadOnly="True" Width="Auto"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
         <Button x:Name="NewButton" Content="Добавить" HorizontalAlignment="Left" Margin="500,346,0,0" VerticalAlignment="Top" Width="75" Click="NewButton_Click"/>
     </Grid>
 </Window>

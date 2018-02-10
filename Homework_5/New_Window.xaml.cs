@@ -17,7 +17,7 @@ namespace Homework_5
 
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
@@ -29,14 +29,14 @@ namespace Homework_5
             }.ConnectionString;
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                var sqlNewEmp = $@"INSERT INTO Employee (FirstName,SecondName,Fullname,Department)
-                               VALUES ('{FirstNameTB.Text}', '{SecondNameTB.Text}', '{SecondNameTB.Text +" "+ FirstNameTB.Text}', '{DepartmentTB.Text}')";
-
                 connection.Open();
+                var sqlNewEmp = $@"INSERT INTO Employee (FirstName,SecondName,Fullname,Department)
+                               VALUES (N'{FirstNameTB.Text}', N'{SecondNameTB.Text}', N'{SecondNameTB.Text +" "+ FirstNameTB.Text}', N'{DepartmentTB.Text}')";
                 SqlCommand command = new SqlCommand(sqlNewEmp, connection);
                 var number = command.ExecuteNonQuery();
             }
-            this.Close();
+            Close();
+            
         }
     }
 }

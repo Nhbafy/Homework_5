@@ -2,7 +2,7 @@
 using System.Windows.Controls;
 using System.Configuration;
 using System.Data.SqlClient;
-
+using System.Data;
 
 namespace Homework_5
 {
@@ -19,13 +19,41 @@ namespace Homework_5
                 DataSource = @"(LocalDb)\MSSQLLocalDB",
                 InitialCatalog = "MyBD"
             }.ConnectionString;
+            SqlDataAdapter adapter = new SqlDataAdapter();
+            DataTable dt = new DataTable();
+            EmpView.DataContext = dt.DefaultView;
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+                SqlCommand command = new SqlCommand("SELECT FullName, Department FROM Employee", connection);
+                adapter.SelectCommand = command;
+                adapter.Fill(dt);
+            }
+
+                //string sql = "SELECT * FROM Employee";
+                //using (SqlConnection connection = new SqlConnection(connectionString))
+                //{
+                //    SqlDataAdapter adapter = new SqlDataAdapter();
+                //    adapter.SelectCommand = new SqlCommand(sql, connection);
+                //    DataTable dt = new DataTable();
+                //    adapter.Fill(dt);
+                //    EmpView.DataContext = dt.DefaultView;
+                //}
+
+
+                
+            
+            
+            
+
+
         }
 
        
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-            Window editWindow = new Edit_Window(Employee.GetEmployee(ViewEmployee.SelectedItem.ToString()))
+            Window editWindow = new Edit_Window(Employee.GetEmployee(EmpView.SelectedItem.ToString()))
             {
                 Owner = this
             };
