@@ -15,18 +15,17 @@ using System.Windows.Shapes;
 namespace Homework_5
 {
     /// <summary>
-    /// Логика взаимодействия для New_Window.xaml
+    /// Логика взаимодействия для Edit_Window.xaml
     /// </summary>
-    public partial class New_Window : Window
+    public partial class Edit_Window : Window
     {
         private Employee _employee;
-        public New_Window (Employee employee)
+        public Edit_Window (Employee employee)
         {
             InitializeComponent();
             FirstNameTB.Text = employee.FirstName;
             SecondNameTB.Text = employee.SecondName;
             DepartmentTB.Text = employee.Department.DepartmentName;
-            AgeTB.Text = employee.Age.ToString();
 
             _employee = employee;
         }
@@ -42,7 +41,6 @@ namespace Homework_5
             _employee.FirstName = FirstNameTB.Text;
             _employee.SecondName = SecondNameTB.Text;
             _employee.Department.DepartmentName = DepartmentTB.Text;
-            _employee.Age = Int32.Parse( AgeTB.Text);
             
             Close();
         }

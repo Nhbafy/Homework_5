@@ -9,34 +9,38 @@ namespace Homework_5
 {
    public class Employee
     {
+
+       
         private String _firstName;
         private String _secondName;
-        private int _age;
         private String _fullname;
         private Department _department;
 
-        public Employee(string firstName, string secondName, int age, Department department)
+        public Employee()
+        {
+        }
+
+        public Employee(string firstName, string secondName, Department department)
         {
             FirstName = firstName;
             SecondName = secondName;
-            this.Age = age;
             _fullname = secondName + " " + firstName;
             Department = department;
         }
 
-  
+
+
         public static ObservableCollection<Employee> Emp_list { get => emp_list; }
         public string Fullname { get => _fullname; }
         public string FirstName { get => _firstName; set => _firstName = value; }
         public string SecondName { get => _secondName; set => _secondName = value; }
-        public int Age { get => _age; set => _age = value; }
         public Department Department { get => _department; set => _department = value; }
 
         private static ObservableCollection<Employee> emp_list = new ObservableCollection<Employee>
             {
-                new Employee("Иван", "Иванов", 34, Department.Dep_list[0]),
-                new Employee("Петр", "Третьков", 23, Department.Dep_list[1]),
-                new Employee("Владимир", "Крепов", 40, Department.Dep_list[2])
+                new Employee("Иван", "Иванов", Department.Dep_list[0]),
+                new Employee("Петр", "Третьков", Department.Dep_list[1]),
+                new Employee("Владимир", "Крепов",Department.Dep_list[2])
             };
         public static Employee GetEmployee(String fullname)
         {

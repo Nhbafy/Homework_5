@@ -1,0 +1,19 @@
+﻿<Window x:Class="Homework_5.New_Window"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Homework_5"
+        mc:Ignorable="d"
+        Title="Добавление" Height="400" Width="426.786">
+    <Grid>
+        <TextBox x:Name="FirstNameTB"  HorizontalAlignment="Left" Margin="122,24,0,0" Text="" Width="252" Height="23" VerticalAlignment="Top"/>
+        <TextBox x:Name="SecondNameTB" Margin="122,74,45,0" Text=""  Height="23" VerticalAlignment="Top"/>
+        <TextBox x:Name="DepartmentTB" HorizontalAlignment="Left" Margin="122,215,0,0" Text="" Width="252" RenderTransformOrigin="1.029,1.734" Height="76" VerticalAlignment="Top"/>
+        <Label x:Name="FirstNameLabel" Content="Имя" HorizontalAlignment="Left" Margin="35,20,0,273"/>
+        <Label x:Name="SecondNameLabel" Content="Фамилия" Margin="35,74,313,263" />
+        <Label x:Name="DepartmentLabel" Content="Департамент" HorizontalAlignment="Left" Margin="35,228,0,0" VerticalAlignment="Top" Height="30"/>
+        <Button Name="SaveButton" Content="Сохранить" HorizontalAlignment="Left" Margin="35,327,0,14" Width="80" Click="SaveButton_Click"/>
+        <Button Name="CancelButton" Content="Отмена" HorizontalAlignment="Left" Height="29" Margin="294,327,0,-36" VerticalAlignment="Top" Width="80" RenderTransformOrigin="0.08,0.086" Click="CancelButton_Click"/>
+    </Grid>
+</Window>

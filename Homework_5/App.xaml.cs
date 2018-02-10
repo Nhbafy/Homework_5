@@ -13,5 +13,6 @@ namespace Homework_5
     /// </summary>
     public partial class App : Application
     {
+
     }
 }
