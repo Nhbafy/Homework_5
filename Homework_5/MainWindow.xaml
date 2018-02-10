@@ -5,26 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Homework_5"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="697.348">
-    <Window.Resources>
-        <local:Employee x:Key="Emp_list"></local:Employee>
-    </Window.Resources>
+        Title="MainWindow" Height="432.069" Width="697.348">
     <Grid>
-        <ComboBox x:Name="ComboBoxTypes" Margin="18,10,0,0" VerticalAlignment="Top" IsReadOnly="True" SelectionChanged="ComboBoxTypes_SelectionChanged" HorizontalAlignment="Left" Width="120">
-            <ComboBoxItem>Сотрудники</ComboBoxItem>
-            <ComboBoxItem>Департамент</ComboBoxItem>
-        </ComboBox>
+        <Button x:Name="EditButton" Content="Редактировать" HorizontalAlignment="Left" Margin="48,346,0,0" VerticalAlignment="Top" Width="102" Click="EditButton_Click" Visibility="Visible"/>
 
-        <Button x:Name="EditButton" Content="Редактировать" HorizontalAlignment="Left" Margin="615,80,-200,0" VerticalAlignment="Top" Width="102" Click="EditButton_Click" Visibility="Visible"/>
-
-        <ListView x:Name="ViewEmployee"  ItemsSource="{Binding  Path=Emp_list}"  HorizontalAlignment="Left" Height="100" Margin="10,116,0,0" VerticalAlignment="Top" Width="669"   SelectionChanged = "ListView_SelectionChanged">
+        <ListView x:Name="ViewEmployee"   HorizontalAlignment="Left" Height="299" Margin="10,10,0,0" VerticalAlignment="Top" Width="669"   SelectionChanged = "ListView_SelectionChanged">
             <ListView.View>
                 <GridView>
-                    <GridViewColumn  Width="350" DisplayMemberBinding="{Binding Source ={StaticResource Emp_List}, Path=FullName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">Сотрудник</GridViewColumn>
-                    <GridViewColumn  Width="350" DisplayMemberBinding="{Binding Source=Emp_List, Path=Department, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">Департамент</GridViewColumn>
+                    <GridViewColumn  Width="350" DisplayMemberBinding="{Binding Path=FullName}">Сотрудник</GridViewColumn>
+                    <GridViewColumn  Width="350" DisplayMemberBinding="{Binding Path=Department}">Департамент</GridViewColumn>
                     <GridViewColumn/>
                 </GridView>
             </ListView.View>
         </ListView>
+        <Button x:Name="NewButton" Content="Добавить" HorizontalAlignment="Left" Margin="500,346,0,0" VerticalAlignment="Top" Width="75" Click="NewButton_Click"/>
     </Grid>
 </Window>
