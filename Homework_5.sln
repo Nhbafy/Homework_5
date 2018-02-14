@@ -1,9 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2010
+VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Homework_5", "Homework_5\Homework_5.csproj", "{C3744F2A-2E48-423E-AD1E-1B25C4A44AA3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{1E85EF56-C205-465D-8499-AFE70AE3CFA6} = {1E85EF56-C205-465D-8499-AFE70AE3CFA6}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GetData", "WebApplication1\GetData.csproj", "{1E85EF56-C205-465D-8499-AFE70AE3CFA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +20,10 @@ Global
 		{C3744F2A-2E48-423E-AD1E-1B25C4A44AA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C3744F2A-2E48-423E-AD1E-1B25C4A44AA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C3744F2A-2E48-423E-AD1E-1B25C4A44AA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E85EF56-C205-465D-8499-AFE70AE3CFA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E85EF56-C205-465D-8499-AFE70AE3CFA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E85EF56-C205-465D-8499-AFE70AE3CFA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E85EF56-C205-465D-8499-AFE70AE3CFA6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
