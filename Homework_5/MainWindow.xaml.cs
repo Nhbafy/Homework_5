@@ -21,7 +21,7 @@ namespace Homework_5
         {
             InitializeComponent();
             EmpView.DataContext = dt.DefaultView;
-
+            client.
             #region
             //var connectionString = new SqlConnectionStringBuilder
             //{
