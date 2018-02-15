@@ -11,8 +11,25 @@
             <s:element minOccurs="0" maxOccurs="1" name="GetAllEmployeeResult">
               <s:complexType>
                 <s:sequence>
-                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
-                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                  <s:element ref="s:schema" />
+                  <s:any />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllDeps">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetAllDepsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllDepsResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:element ref="s:schema" />
+                  <s:any />
                 </s:sequence>
               </s:complexType>
             </s:element>
@@ -37,6 +54,12 @@
   <wsdl:message name="GetAllEmployeeSoapOut">
     <wsdl:part name="parameters" element="tns:GetAllEmployeeResponse" />
   </wsdl:message>
+  <wsdl:message name="GetAllDepsSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllDeps" />
+  </wsdl:message>
+  <wsdl:message name="GetAllDepsSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllDepsResponse" />
+  </wsdl:message>
   <wsdl:message name="HelloWorldSoapIn">
     <wsdl:part name="parameters" element="tns:HelloWorld" />
   </wsdl:message>
@@ -48,6 +71,10 @@
       <wsdl:input message="tns:GetAllEmployeeSoapIn" />
       <wsdl:output message="tns:GetAllEmployeeSoapOut" />
     </wsdl:operation>
+    <wsdl:operation name="GetAllDeps">
+      <wsdl:input message="tns:GetAllDepsSoapIn" />
+      <wsdl:output message="tns:GetAllDepsSoapOut" />
+    </wsdl:operation>
     <wsdl:operation name="HelloWorld">
       <wsdl:input message="tns:HelloWorldSoapIn" />
       <wsdl:output message="tns:HelloWorldSoapOut" />
@@ -57,6 +84,15 @@
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetAllEmployee">
       <soap:operation soapAction="http://tempuri.org/GetAllEmployee" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDeps">
+      <soap:operation soapAction="http://tempuri.org/GetAllDeps" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -78,6 +114,15 @@
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="GetAllEmployee">
       <soap12:operation soapAction="http://tempuri.org/GetAllEmployee" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllDeps">
+      <soap12:operation soapAction="http://tempuri.org/GetAllDeps" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

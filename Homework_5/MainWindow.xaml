@@ -8,14 +8,27 @@
         Title="MainWindow" Height="432.069" Width="697.348">
     <Grid>
         <Button x:Name="EditButton" Content="Редактировать" HorizontalAlignment="Left" Margin="48,346,0,0" VerticalAlignment="Top" Width="102" Click="EditButton_Click" Visibility="Visible"/>
-        <StackPanel>
-            <DataGrid Name="EmpView" AutoGenerateColumns="False" ItemsSource="{Binding}" IsReadOnly="True">
+        <StackPanel x:Name="EmpPanel" Margin="0,40,0,0" Visibility="Hidden">
+            <DataGrid x:Name="EmpView" AutoGenerateColumns="False" ItemsSource="{Binding}" IsReadOnly="True" HorizontalAlignment="Right" Width="689">
                 <DataGrid.Columns>
-                    <DataGridTextColumn x:Name="EmpColumn" Binding="{Binding FullName}" Header="Сотрудник" IsReadOnly="True" Width="Auto"/>
-                    <DataGridTextColumn x:Name="DepColumn" Binding="{Binding Department}" Header="Департамент" IsReadOnly="True" Width="Auto"/>
+                    <DataGridTextColumn x:Name="EmpColumn" Binding="{Binding FullName}" Header="Сотрудник" IsReadOnly="True" Width="340"/>
+                    <DataGridTextColumn x:Name="DepColumn" Binding="{Binding Department}" Header="Департамент" IsReadOnly="True" Width="340"/>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+        <StackPanel x:Name="DepPanel" Margin="0,40,0,0" Visibility="Hidden">
+            <DataGrid x:Name="DepView" AutoGenerateColumns="False" ItemsSource="{Binding}" IsReadOnly="True" HorizontalAlignment="Right" Width="689">
+                <DataGrid.Columns>
+                    <DataGridTextColumn x:Name="DepNameColumn" Binding="{Binding DepName}" Header="Название" IsReadOnly="True" Width="340"/>
                 </DataGrid.Columns>
             </DataGrid>
         </StackPanel>
         <Button x:Name="NewButton" Content="Добавить" HorizontalAlignment="Left" Margin="500,346,0,0" VerticalAlignment="Top" Width="75" Click="NewButton_Click"/>
+        <ComboBox x:Name="TypeSelect" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="TypeSelect_SelectionChanged">
+            <ComboBoxItem x:Name="Сотрудники">Сотрудники</ComboBoxItem>
+            <ComboBoxItem x:Name="Департаменты">Департаменты</ComboBoxItem>
+        </ComboBox>
+
+
     </Grid>
 </Window>

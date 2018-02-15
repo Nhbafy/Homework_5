@@ -18,10 +18,17 @@ namespace Homework_5.ServiceReference1 {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllEmployee", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataTable GetAllEmployee();
+        System.Data.DataSet GetAllEmployee();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllEmployee", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataTable> GetAllEmployeeAsync();
+        System.Threading.Tasks.Task<System.Data.DataSet> GetAllEmployeeAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllDeps", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet GetAllDeps();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetAllDeps", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> GetAllDepsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/HelloWorld", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -58,12 +65,20 @@ namespace Homework_5.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public System.Data.DataTable GetAllEmployee() {
+        public System.Data.DataSet GetAllEmployee() {
             return base.Channel.GetAllEmployee();
         }
         
-        public System.Threading.Tasks.Task<System.Data.DataTable> GetAllEmployeeAsync() {
+        public System.Threading.Tasks.Task<System.Data.DataSet> GetAllEmployeeAsync() {
             return base.Channel.GetAllEmployeeAsync();
+        }
+        
+        public System.Data.DataSet GetAllDeps() {
+            return base.Channel.GetAllDeps();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataSet> GetAllDepsAsync() {
+            return base.Channel.GetAllDepsAsync();
         }
         
         public string HelloWorld() {

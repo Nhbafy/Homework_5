@@ -13,43 +13,14 @@ namespace Homework_5
     public partial class MainWindow : Window
     {
         SqlDataAdapter adapter = new SqlDataAdapter();
-        DataTable dt = new DataTable();
+
         ServiceReference1.WebService1SoapClient client = new ServiceReference1.WebService1SoapClient();
 
-        
+
         public MainWindow()
         {
             InitializeComponent();
-            EmpView.DataContext = dt.DefaultView;
-            client.
-            #region
-            //var connectionString = new SqlConnectionStringBuilder
-            //{
-            //    DataSource = @"(LocalDb)\MSSQLLocalDB",
-            //    InitialCatalog = "MyBD"
-            //}.ConnectionString;
-
-
-            //using (SqlConnection connection = new SqlConnection(connectionString))
-            //{
-            //    SqlCommand command = new SqlCommand("SELECT FullName, Department FROM Employee", connection);
-            //    adapter.SelectCommand = command;
-            //    adapter.Fill(dt);
-            //}
-
-            //string sql = "SELECT * FROM Employee";
-            //using (SqlConnection connection = new SqlConnection(connectionString))
-            //{
-            //    SqlDataAdapter adapter = new SqlDataAdapter();
-            //    adapter.SelectCommand = new SqlCommand(sql, connection);
-            //    DataTable dt = new DataTable();
-            //    adapter.Fill(dt);
-            //    EmpView.DataContext = dt.DefaultView;
-            //}
-            #endregion
         }
-
-
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
@@ -58,18 +29,40 @@ namespace Homework_5
             //    Owner = this
             //};
             //editWindow.ShowDialog();
-            MessageBox.Show(client.HelloWorld());
-        }
-
-        private void ListView_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
 
         }
 
         private void NewButton_Click(object sender, RoutedEventArgs e)
         {
-            Window newWindow = new New_Window(adapter,dt);
-            newWindow.ShowDialog();
+        //    Window newWindow = new New_Window(adapter,dt);
+         //   newWindow.ShowDialog();
+        }
+        
+
+        private void TypeSelect_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ComboBox comboBox = (ComboBox)sender;
+            ComboBoxItem selectedItem = (ComboBoxItem)comboBox.SelectedItem;
+            if (selectedItem.Name =="Сотрудники")
+            {
+
+                EmpPanel.Visibility = Visibility.Visible;
+                DepPanel.Visibility = Visibility.Hidden;
+                foreach (DataTable dt in client.GetAllEmployee().Tables)
+                {
+                    EmpView.DataContext = dt.DefaultView;
+                }
+            }
+            if (selectedItem.Name == "Департаменты")
+            {
+                EmpPanel.Visibility = Visibility.Hidden;
+                DepPanel.Visibility = Visibility.Visible;
+                foreach (DataTable dt in client.GetAllDeps().Tables)
+                {
+                    DepView.DataContext = dt.DefaultView;
+                }
+
+            }
         }
     }
  

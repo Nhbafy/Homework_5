@@ -19,7 +19,7 @@ namespace WebApplication1
     public class WebService1 : System.Web.Services.WebService
     {
         SqlDataAdapter adapter = new SqlDataAdapter();
-        DataTable dt = new DataTable();
+        DataSet dt = new DataSet();
         string connectionString = new SqlConnectionStringBuilder
         {
             DataSource = @"(LocalDb)\MSSQLLocalDB",
@@ -27,7 +27,7 @@ namespace WebApplication1
         }.ConnectionString;
 
         [WebMethod]
-      public  DataTable GetAllEmployee()
+      public DataSet GetAllEmployee()
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
@@ -37,22 +37,17 @@ namespace WebApplication1
             }
             return dt;
         }
-
-        
-
-
-
         [WebMethod]
-        public string HelloWorld()
+        public DataSet GetAllDeps()
         {
-            return "Привет всем!";
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                SqlCommand command = new SqlCommand("SELECT * FROM Department", connection);
+                adapter.SelectCommand = command;
+                adapter.Fill(dt);
+            }
+            return dt;
         }
 
-        
-        //[WebMethod]
-        //object GetEmployee()
-        //{
-        //    return object;
-        //}
     }
 }
